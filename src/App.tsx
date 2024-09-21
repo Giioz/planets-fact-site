@@ -1,7 +1,10 @@
 import './App.css'
+import { PlanetsHeader } from './components/shared/PlanetsHeader'
 
 function App() {
-  return 
+  return (
+    <PlanetsHeader />
+  )
 }
 
 export default App
