@@ -3,9 +3,6 @@ export const IconBurgerMenu = () => {
   return (
     <>
     <svg width="32.000000" height="25.000000" viewBox="0 0 32 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <desc>
-          Created with Pixso.
-      </desc>
       <defs>
         <filter id="filter_0_1922_dd" x="0.000000" y="0.000000" width="32.000000" height="25.000000" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
           <feFlood flood-opacity="0" result="BackgroundImageFix"/>
