@@ -1,14 +1,29 @@
 import React, { useState } from "react";
 import { IconBurgerMenu } from "../icons/IconBurgerMenu";
 
+export interface Planet {
+  name: string;
+  overview: { content: string; source: string };
+  structure: { content: string; source: string };
+  geology: { content: string; source: string };
+  rotation: string;
+  revolution: string;
+  radius: string;
+  temperature: string;
+  images: { planet: string; internal: string; geology: string };
+}
 
-export const PlanetsHeader: React.FC = () => {
+export interface NavBarProps {
+  planets: Planet[];
+  onPlanetClick: (planet: Planet) => void;
+}
+
+export const PlanetsHeader: React.FC<NavBarProps> = ({planets, onPlanetClick}:any) => {
   const [burgerValue, setBurgerValue] = useState(false)
   const handleValueChange = (value:boolean) => {
     setBurgerValue(value)
   }
   const isBurgerToggled = burgerValue;
-  console.log(isBurgerToggled)
 
   return (
     <>
@@ -20,7 +35,9 @@ export const PlanetsHeader: React.FC = () => {
       {isBurgerToggled && (
         <div className="sticky w-full h-[100vh]">
           <nav className="w-full h-full bg-white absolute top-[0px]">
-            
+            {planets.map((planet:any)=>(
+              <li key={planet.name} onClick={() => onPlanetClick(planet)}>{planet.name}</li>
+            ))}
           </nav>
         </div>
       )}
