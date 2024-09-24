@@ -11,7 +11,7 @@ export const PlanetsAbout = () => {
         </ul>
       </div>
       <div className="w-[111px] h-[111px] m-auto my-[98px]">
-        <img src="./public/assets/planet-mercury.svg" alt="Mercury"/>
+        <img src="./assets/planet-mercury.svg" alt="Mercury"/>
       </div>
       <div className="max-w-[327px] text-center m-auto">
         <h1 className="text-white text-[40px] font-medium">MERCURY</h1>
