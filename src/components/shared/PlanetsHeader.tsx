@@ -3,14 +3,29 @@ import { IconBurgerMenu } from "../icons/IconBurgerMenu";
 
 export interface Planet {
   name: string;
-  overview: { content: string; source: string };
-  structure: { content: string; source: string };
-  geology: { content: string; source: string };
-  rotation: string;
-  revolution: string;
-  radius: string;
-  temperature: string;
-  images: { planet: string; internal: string; geology: string };
+  overview: { 
+    content: string; 
+    source: string; 
+  };
+  structure: { 
+    content: string; 
+    source: string; 
+  };
+  geology: { 
+    content: string; 
+    source: string; 
+  };
+  facts: {
+    rotation: string;
+    revolution: string;
+    radius: string;
+    temperature: string;
+  };
+  images: { 
+    planet: string; 
+    internal: string; 
+    geology: string; 
+  };
 }
 
 export interface NavBarProps {
@@ -18,7 +33,7 @@ export interface NavBarProps {
   onPlanetClick: (planet: Planet) => void;
 }
 
-export const PlanetsHeader: React.FC<NavBarProps> = ({planets, onPlanetClick}:any) => {
+export const PlanetsHeader: React.FC<NavBarProps> = ({planets, onPlanetClick}) => {
   const [burgerValue, setBurgerValue] = useState(false)
   const handleValueChange = (value:boolean) => {
     setBurgerValue(value)
