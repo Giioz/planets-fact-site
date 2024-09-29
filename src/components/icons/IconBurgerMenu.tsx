@@ -6,7 +6,7 @@ export const IconBurgerMenu = ({ onValueChange }:any) => {
   const [isOpen, setIsOpen] = useState(false)
   const toggleBurger = () => {
     setIsOpen(!isOpen)
-    onValueChange(isOpen)
+    onValueChange(!isOpen)
   }
   return (
     <>
