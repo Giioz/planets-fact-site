@@ -51,7 +51,9 @@ export const PlanetsHeader: React.FC<NavBarProps> = ({planets, onPlanetClick}) =
         <div className="sticky w-full h-[100vh]">
           <nav className="w-full h-full bg-white absolute top-[0px]">
             {planets.map((planet:any)=>(
-              <li key={planet.name} onClick={() => onPlanetClick(planet)}>{planet.name}</li>
+              <li key={planet.name} onClick={() => onPlanetClick(planet)}
+                  className="list-none "
+              > <div className="flex"><span className={`rounded-full w-[20px] h-[20px] bg-${planet.name.toLowerCase()}`}></span>{planet.name}</div></li>
             ))}
           </nav>
         </div>
