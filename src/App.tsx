@@ -15,7 +15,7 @@ function App() {
   return (
     <>
       <PlanetsHeader planets={data} onPlanetClick={handlePlanetClick} />
-      {selectedPlanet && <PlanetsAbout planet={selectedPlanet}/>}
+      <PlanetsAbout planet={selectedPlanet}/>
     </>
   )
 }
