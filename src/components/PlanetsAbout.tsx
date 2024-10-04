@@ -29,7 +29,7 @@ export const PlanetsAbout = ({planet}:any) => {
   useEffect(() => {
     if(width >= 700) {
       setIsMobile(true)
-    }else if(width <= 700){
+    }else if(width <= 750){
       setIsMobile(false)
     }
   })
