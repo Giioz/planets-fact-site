@@ -1,15 +1,13 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { PlanetsAboutContent } from "./shared/PlanetsAboutContent";
 import { PlanetsFactCard } from "./shared/PlanetsFactCard"
 import { PlanetsInfoItems } from "./shared/PlanetsInfoItems";
-import { useWindowSize } from "./hooks/ResizeHook";
 
-export const PlanetsAbout = ({planet}:any) => {
+export const PlanetsAbout = ({planet, isMobile}:any) => {
 
   const [selectedData, setSelectedData] = useState(planet["overview"]);
   const [activeIndex, setActiveIndex] = useState(Number);
-  const [isMobile, setIsMobile] = useState(false)
-  const [width,height]:any = useWindowSize()
+
   
   let facts = planet.facts
 
@@ -22,26 +20,21 @@ export const PlanetsAbout = ({planet}:any) => {
 
   const handleClick = ( key : any, index: number) => {
     if(selectedData != planet[key]){
+      console.log(planet[key]);
       setSelectedData(planet[key])
     }
     setActiveIndex(index)
   }
-  useEffect(() => {
-    if(width >= 700) {
-      setIsMobile(true)
-    }else if(width <= 750){
-      setIsMobile(false)
-    }
-  })
+ 
 
   return (
     <section>
+      {isMobile && 
       <div className="border-b-[1px] border-t-[1px] border-[#979797] border-opacity-[20%]">
         <ul className="w-auto min-h-[50px] pt-[20px] text-white flex px-[24px]  max-gap-[44px] text-[12px] font-bold tracking-[2.6px] leading-[25px] justify-between items-center">
-          {isMobile && <PlanetsInfoItems planetName={planet.name} handleClik={handleClick} activeIndex={activeIndex}/> }
-          
+          <PlanetsInfoItems planetName={planet.name} handleClik={handleClick} activeIndex={activeIndex}/> 
         </ul>
-      </div>
+      </div>}
       <div className="w-full">
         <PlanetsAboutContent planet={planet} info={selectedData}/>
       </div>
