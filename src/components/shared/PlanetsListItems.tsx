@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export const PlanetsListItems = ({planets, onPlanetClick, isMobile}:any) => {
+export const PlanetsListItems = ({planets, onPlanetClick, isMobile, onClick}:any) => {
     const liColors:any = {
         Mercury: "bg-mercury",
         Venus: "bg-venus",
@@ -18,12 +18,12 @@ export const PlanetsListItems = ({planets, onPlanetClick, isMobile}:any) => {
               {planets.map((planet:any)=>(
                   <li 
                       key={planet.name} 
-                      onClick={() => onPlanetClick(planet)}
+                      onClick={() => {onPlanetClick(planet), onClick()}}
                       className="list-none border-b-[1px] border-opacity-[10%] border-white flex justify-between py-[20px] cursor-pointer"
                   > 
                   <div className="flex text-white gap-[25px]">
                       <span className={`rounded-full w-[20px] h-[20px] ${liColors[planet.name]}`}></span>
-                      {planet.name.toUpperCase()} 
+                      {planet.name.toUpperCase()}
                   </div>
                   <div className="text-opacity-[40%] text-white"> &gt;</div>
                   </li>
@@ -51,7 +51,7 @@ export const PlanetsListItems = ({planets, onPlanetClick, isMobile}:any) => {
         }; 
 
         return (
-            <nav className="flex w-full text-white justify-between border-b-[1px] border-opacity-[10%] border-white ">
+            <nav className="flex w-full text-white justify-between border-b-[1px] border-opacity-[10%] border-white px-md lg:justify-end lg:gap-[33px] lg:border-none">
 
                 {planets.map((planet:any, index:number)=>(
                     <li 
@@ -60,8 +60,8 @@ export const PlanetsListItems = ({planets, onPlanetClick, isMobile}:any) => {
                             onPlanetClick(planet);
                             handleClick(index);
                           }}
-                        className={`list-none  py-[20px] cursor-pointer
-                        ${activeIndex === index ? ` ${borderColors[planet.name.toLowerCase()]} border-t-[3px]` : ''}
+                        className={`list-none  py-[20px] cursor-pointer lg:py-[37px]
+                        ${activeIndex === index ? ` ${borderColors[planet.name]}  border-t-[3px]` : ''}
                         `}
                     > 
                     {planet.name.toUpperCase()}
