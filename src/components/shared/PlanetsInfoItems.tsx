@@ -20,11 +20,11 @@ export const PlanetsInfoItems = ({planetName, handleClik, activeIndex}:any) => {
         {listItems.map((item:any, index:number) => (
             <li key={item.key} 
                 onClick={() => handleClik(item.key, index)} 
-                className={`pb-[21px] align-text-top
+                className={`pb-[21px] align-text-top cursor-pointer
                 ${activeIndex === index ? ` ${borderColors[planetName]} border-b-[3px]` : ''}`}>
             {item.label}
             </li>
         ))}
-    </>
+        </>
   )
 }
