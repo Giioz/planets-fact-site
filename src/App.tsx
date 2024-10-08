@@ -9,7 +9,7 @@ import { useWindowSize } from './components/hooks/ResizeHook';
 function App() {
   const [selectedPlanet, setSelectedPlanet] = useState(data[0]);
   const [isMobile, setIsMobile] = useState(false)
-  const [width,height]:any = useWindowSize()
+  const [width]:any = useWindowSize()
   useEffect(() => {
     if(width <= 768) {
       setIsMobile(true)
