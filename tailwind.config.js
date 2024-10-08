@@ -11,6 +11,7 @@ export default {
     },
     spacing: {
       sm: ["1.5rem"],
+      md: ["39px"]
     },
     
     extend: {
