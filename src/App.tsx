@@ -19,7 +19,6 @@ function App() {
   })
   const handlePlanetClick = (planet:any) => {
     setSelectedPlanet(planet);
-    
   };
   return (
     <>
