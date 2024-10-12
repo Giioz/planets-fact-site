@@ -31,6 +31,7 @@ export const PlanetsListItems = ({planets, onPlanetClick, isMobile, onClick}:any
           </>
         )
     } 
+    
     // for tablets >768px
     else if(!isMobile){
         const [activeIndex, setActiveIndex] = useState(Number);
